@@ -3,7 +3,13 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				kalam: 'Kalam',
+				nunito: 'Nunito',
+				'material-symbols-rounded': 'Material Symbols Rounded'
+			}
+		}
 	},
 
 	plugins: []
