@@ -10,6 +10,9 @@
 	let value = $state('');
 
 	onMount(() => {
+		if (!localStorage.getItem('name')) {
+			localStorage.setItem('name', 'Abdullah');
+		}
 		let _arr = localStorage.getItem('arr');
 		if (!_arr) {
 			localStorage.setItem('arr', JSON.stringify([{ title: 'host', value: '' }]));
