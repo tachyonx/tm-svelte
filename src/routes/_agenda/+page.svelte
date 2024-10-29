@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import Symbol from '$lib/components/Symbol.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
@@ -63,5 +64,13 @@
 			}}
 			class="absolute bottom-2 left-1/2 -translate-x-1/2 underline">view as admin</button
 		>
+		<button
+			onclick={() => {
+				goto('home');
+			}}
+			class="absolute left-3 top-3.5 rounded-full p-2 underline transition-colors duration-300 active:bg-gray-200"
+		>
+			<Symbol name="arrow_back_ios_new" />
+		</button>
 	</div>
 </main>
