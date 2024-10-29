@@ -15,10 +15,6 @@
 			localStorage.setItem('name', 'Abdullah');
 		}
 		let _arr = localStorage.getItem('arr');
-		if (!_arr) {
-			localStorage.setItem('arr', JSON.stringify([{ title: 'host', value: '' }]));
-		}
-		_arr = localStorage.getItem('arr');
 		arr = JSON.parse(_arr || '[]');
 	});
 </script>
