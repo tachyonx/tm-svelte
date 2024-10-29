@@ -31,7 +31,10 @@
 	});
 </script>
 
-<div class="relative h-screen w-screen overflow-hidden bg-gray-50 {className}" {...props}>
+<div
+	class="relative flex h-screen w-screen flex-col overflow-hidden bg-gray-50 {className}"
+	{...props}
+>
 	{#if hasLoaded}
 		{@render children()}
 	{:else}
