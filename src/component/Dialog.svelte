@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createDialog, melt } from '@melt-ui/svelte';
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import Symbol from '$lib/components/Symbol.svelte';
 	import type { Snippet } from 'svelte';
 
@@ -25,14 +25,18 @@
 
 {#if $open}
 	<div class="font-nunito" use:melt={$portalled}>
-		<div use:melt={$overlay} class="fixed inset-0 z-50 bg-black/50" transition:fade></div>
+		<div
+			use:melt={$overlay}
+			class="fixed inset-0 z-50 bg-black/50"
+			transition:fade={{ duration: 200 }}
+		></div>
 		<div
 			class="fixed left-1/2 top-1/2 z-50 max-h-[85vh] w-[90vw] max-w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-4 shadow-lg"
 			use:melt={$content}
-			transition:fade
+			transition:fly={{ y: 200 }}
 		>
-			<h2 use:melt={$title} class="text-lg font-semibold leading-6 text-black">Add line</h2>
-			<p use:melt={$description} class="-mt-1 mb-4 leading-normal text-zinc-600">desc</p>
+			<h2 use:melt={$title} class="mb-5 text-xl font-semibold leading-6 text-black">Add role</h2>
+			<!-- <p use:melt={$description} class="-mt-1 mb-4 leading-normal text-zinc-600">desc</p> -->
 
 			<div class="group relative bg-white">
 				<input
@@ -47,19 +51,19 @@
 				</p>
 			</div>
 
-			<div class="mt-6 flex justify-end gap-4">
+			<div class="mt-6 flex justify-end gap-4 font-nunito font-semibold">
 				<button
 					use:melt={$close}
-					class="inline-flex h-8 items-center justify-center rounded-lg bg-gray-50 px-4 font-medium leading-none"
+					class="rounded-lg bg-gray-200 px-4 py-2 transition-colors duration-300 active:bg-gray-300"
 				>
 					Cancel
 				</button>
 				<button
 					use:melt={$close}
 					onclick={click}
-					class="bg-magnum-100 text-magnum-900 inline-flex h-8 items-center justify-center rounded-sm px-4 font-medium leading-none"
+					class="rounded-lg bg-green-400 px-4 py-2 text-black transition-colors duration-300 active:bg-green-500"
 				>
-					Add
+					Save
 				</button>
 			</div>
 			<button
