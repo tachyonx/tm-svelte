@@ -7,6 +7,9 @@
 	let { children } = $props();
 </script>
 
+<svelte:head>
+	<link rel="stylesheet" href="/fonts.css" />
+</svelte:head>
 <ParaglideJS {i18n}>
 	<Client>
 		{@render children()}

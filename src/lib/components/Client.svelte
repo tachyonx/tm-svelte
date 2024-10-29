@@ -16,18 +16,23 @@
 
 	onMount(() => {
 		tick().then(() => {
-			if (!pb.authStore.isValid && !window.location.href.includes('/login')) {
-				goto('/login').then(() => {
-					hasLoaded = true;
-				});
-			} else if (pb.authStore.isValid && window.location.href.includes('/login')) {
-				goto('/agenda').then(() => {
-					hasLoaded = true;
-				});
-			} else {
+			goto('/home').then(() => {
 				hasLoaded = true;
-			}
+			});
 		});
+		// tick().then(() => {
+		// 	if (!pb.authStore.isValid && !window.location.href.includes('/login')) {
+		// 		goto('/login').then(() => {
+		// 			hasLoaded = true;
+		// 		});
+		// 	} else if (pb.authStore.isValid && window.location.href.includes('/login')) {
+		// 		goto('/agenda').then(() => {
+		// 			hasLoaded = true;
+		// 		});
+		// 	} else {
+		// 		hasLoaded = true;
+		// 	}
+		// });
 	});
 </script>
 
